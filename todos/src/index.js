@@ -6,6 +6,7 @@ import {
 } from './actions';
 
 import store from './store';
+import './scss/index.scss';
 
 //log the initial state
 console.log(store.getState());
