@@ -3,7 +3,7 @@ import FilterLink from '../containers/FilterLink';
 import { VisibilityFilters } from '../actions';
 
 
-const Footer = () => (
+const FilterHeader = () => (
 	<p className="footer">
 		<div className="show">Show :</div>
 		<FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>
@@ -12,4 +12,4 @@ const Footer = () => (
 	</p>
 );
 
-export default Footer;
+export default FilterHeader;

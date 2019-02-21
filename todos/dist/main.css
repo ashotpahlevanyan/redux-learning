@@ -219,6 +219,8 @@ body {
   }
 }
 .todoList li {
+  position: relative;
+  cursor: pointer;
   display: block;
   padding: 10px;
   background-color: chocolate;
@@ -233,6 +235,15 @@ body {
 }
 .todoList li + li {
   margin-top: 10px;
+}
+.todoList li.completed {
+  background-color: green;
+}
+.todoList li .faicon {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  font-size: 22px;
 }
 
 .add {
