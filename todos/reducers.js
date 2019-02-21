@@ -1,14 +1,12 @@
 import {
 	ADD_TODO,
 	TOGGLE_TODO,
-	VisibilityFilters,
-	SET_VISIBILITY_FILTER
+	SET_VISIBILITY_FILTER,
+	VisibilityFilters
 } from './actions';
 
-const initialState = {
-	visibilityFilter: VisibilityFilters.SHOW_ALL,
-	todos: []
-};
+const { SHOW_ALL } = VisibilityFilters;
+
 
 function todos(state = [], action) {
 	switch(action.type) {
@@ -41,24 +39,19 @@ function todos(state = [], action) {
 	}
 }
 
-function todoApp(state = initialState, action) {
-	switch(action.type) {
+function visibilityFilter(state = SHOW_ALL, action) {
+	switch (action.type) {
 		case SET_VISIBILITY_FILTER:
-			return Object.assign({}, state, {
-				visibilityFilter: action.filter
-			});
-
-		case ADD_TODO:
-			return Object.assign({}, state, {
-				todos: todos(state.todos, action)
-			});
-
-		case TOGGLE_TODO:
-			return Object.assign({}, state, {
-				todos: todos(state.todos, action)
-			});
+			return action.filter;
 
 		default:
 			return state;
 	}
+}
+
+function todoApp(state = {}, action) {
+	return {
+		visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+		todos: todos(state.todos, action)
+	};
 }
