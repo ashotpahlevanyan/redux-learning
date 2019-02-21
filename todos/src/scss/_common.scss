@@ -1,0 +1,90 @@
+.routes {
+  display: inline-block;
+  margin-left: 20px;
+  padding: 10px;
+  li {
+    display: inline-block;
+    & + li {
+      margin-left: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: $white;
+      padding: 8px 10px;
+      line-height: 1.5;
+      font-size: 16px;
+      border: 1px solid transparent;
+      font-weight: bold;
+      @include border-radius(5px);
+      &:hover, &:active, &:focus {
+        border: 1px solie $white;
+        color: $darkBlue;
+        background-color: $white;
+      }
+      .fa {
+        font-size: 25px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+@media print {
+  body {
+    font-size: 0.8em;
+  }
+  .noPrint {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .routes {
+    li {
+      margin-top: 5px;
+      & + li {
+        margin-left: 10px;
+      }
+      a {
+        display: inline-block;
+        padding: 5px 10px;
+      }
+    }
+  }
+  .header {
+    .routes {
+      display: block;
+      background-color: $darkBlue;
+      font-size: 0;
+      li {
+        display: inline-block;
+        font-size: 16px;
+        width: 32.33%;
+        margin: 0 1% 0 0;
+        & + li {
+          margin-left: 0;
+        }
+        a {
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 576px) {
+  .header {
+    .routes {
+      li {
+        display: block;
+        width: 100%;
+        padding: 2px 0;
+        a {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
