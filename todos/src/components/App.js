@@ -5,12 +5,12 @@ import VisibleTodoList from '../containers/VisibleTodoList';
 import library from './FontAwesomeLibrary';
 
 
-const App = () => (
+const App = ({match: {params}}) => (
 	<div className="container wrapper">
 		<h1 className="text-center">Todo Application</h1>
 		<AddTodo />
 		<FilterHeader />
-		<VisibleTodoList />
+		<VisibleTodoList filter={params.filter || 'SHOW_ALL'}/>
 	</div>
 );
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import App from './components/App';
+import Root from './components/Root';
 
 import store from './store/store';
 
@@ -10,8 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/index.scss';
 
 render(
-	<Provider store={store}>
-		<App/>
-	</Provider>,
+	<Root store={store}/>,
 	document.getElementById('root')
 );
