@@ -1,0 +1,315 @@
+@import url(https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto);
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: greenyellow;
+  overflow-x: hidden;
+  color: #7236bc;
+  font-size: 16px;
+  font-family: Lato, sans-serif;
+  position: relative;
+  line-height: 1.1;
+  min-height: 100%;
+}
+
+.container {
+  max-width: 992px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 100% !important;
+  }
+}
+.wrapper {
+  margin-top: 20px;
+}
+
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+------------------------------------------------------------- */
+/* ==== Local Fonts ====
+*/
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/Raleway-Black.eot");
+  src: url("/assets/fonts/Raleway-Black.eot?#iefix") format("embedded-opentype");
+  src: url("/assets/fonts/Raleway-Black.woff2") format("woff2");
+  src: url("/assets/fonts/Raleway-Black.woff") format("woff");
+  src: url("/assets/fonts/Raleway-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/assets/fonts/Raleway-BlackItalic.eot");
+  src: url("/assets/fonts/Raleway-BlackItalic.eot?#iefix") format("embedded-opentype");
+  src: url("/assets/fonts/Raleway-BlackItalic.woff2") format("woff2");
+  src: url("/assets/fonts/Raleway-BlackItalic.woff") format("woff");
+  src: url("/assets/fonts/Raleway-BlackItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/Raleway-Bold.eot");
+  src: url("/assets/fonts/Raleway-Bold.eot?#iefix") format("embedded-opentype");
+  src: url("/assets/fonts/Raleway-Bold.woff2") format("woff2");
+  src: url("/assets/fonts/Raleway-Bold.woff") format("woff");
+  src: url("/assets/fonts/Raleway-Bold.ttf") format("truetype");
+}
+/* ==== Remote Fonts ====
+*/
+.routes {
+  display: inline-block;
+  margin-left: 20px;
+  padding: 10px;
+}
+.routes li {
+  display: inline-block;
+}
+.routes li + li {
+  margin-left: 10px;
+}
+.routes li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 10px;
+  line-height: 1.5;
+  font-size: 16px;
+  border: 1px solid transparent;
+  font-weight: bold;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.routes li a:hover, .routes li a:active, .routes li a:focus {
+  border: 1px solie #fff;
+  color: #7236bc;
+  background-color: #fff;
+}
+.routes li a .fa {
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+@media print {
+  body {
+    font-size: 0.8em;
+  }
+
+  .noPrint {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .routes li {
+    margin-top: 5px;
+  }
+  .routes li + li {
+    margin-left: 10px;
+  }
+  .routes li a {
+    display: inline-block;
+    padding: 5px 10px;
+  }
+
+  .header .routes {
+    display: block;
+    background-color: #7236bc;
+    font-size: 0;
+  }
+  .header .routes li {
+    display: inline-block;
+    font-size: 16px;
+    width: 32.33%;
+    margin: 0 1% 0 0;
+  }
+  .header .routes li + li {
+    margin-left: 0;
+  }
+  .header .routes li a {
+    display: block;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .header .routes li {
+    display: block;
+    width: 100%;
+    padding: 2px 0;
+  }
+  .header .routes li a {
+    text-align: left;
+  }
+}
+.todoList li {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  background-color: chocolate;
+  color: #fff;
+  font-weight: bold;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+.todoList li + li {
+  margin-top: 10px;
+}
+.todoList li.completed {
+  background-color: green;
+}
+.todoList li .faicon {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  font-size: 22px;
+}
+
+.add {
+  width: 100%;
+}
+
+@media (max-width: 575px) {
+  .add {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+  }
+}
+.headingStyle, h1, h2, h3, h4, h5, h6 {
+  font-family: Lato, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.8em;
+}
+
+h6 {
+  font-size: 0.7em;
+}
+
+.footer {
+  padding: 20px;
+}
+.footer .btn {
+  margin-bottom: 10px;
+}
+.footer .btn + .btn {
+  margin-left: 10px;
+}
+
+.show {
+  padding: 10px 0;
+  font-weight: bold;
+  color: #7236bc;
+  margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 10px 0;
+  }
+}
