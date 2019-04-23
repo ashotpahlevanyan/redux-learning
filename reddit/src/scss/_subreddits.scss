@@ -1,0 +1,57 @@
+.redditList {
+  li {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    background-color: #179fac;//#1ec2d2; //chocolate
+    color: #fff;
+    font-weight: bold;
+    @include border-radius(3px);
+    & + li {
+      margin-top: 10px;
+    }
+    &.completed {
+      background-color: green;
+    }
+    .faicon {
+      position: absolute;
+      right: 10px;
+      top: 7px;
+      font-size: 22px;
+    }
+  }
+}
+
+.add {
+  width: 100%;
+}
+
+.update {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  .updatedAt {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .refresh {
+    width: 200px;
+    margin-bottom: 10px;
+
+  }
+}
+
+@media (max-width: 575px) {
+  .add {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+  }
+  .update {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
