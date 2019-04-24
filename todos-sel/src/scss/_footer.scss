@@ -1,0 +1,23 @@
+.footer {
+  padding: 20px;
+  .btn {
+    margin-bottom: 10px;
+
+    & + .btn {
+      margin-left: 10px;
+    }
+  }
+}
+
+.show {
+  padding: 10px 0;
+  font-weight: bold;
+  color: $darkBlue;
+  margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 10px 0;
+  }
+}

@@ -1,0 +1,36 @@
+.todoList {
+  li {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    background-color: chocolate;
+    color: #fff;
+    font-weight: bold;
+    @include border-radius(3px);
+    & + li {
+      margin-top: 10px;
+    }
+    &.completed {
+      background-color: green;
+    }
+    .faicon {
+      position: absolute;
+      right: 10px;
+      top: 7px;
+      font-size: 22px;
+    }
+  }
+}
+
+.add {
+  width: 100%;
+}
+
+@media (max-width: 575px) {
+  .add {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+  }
+}
