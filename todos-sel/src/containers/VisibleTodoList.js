@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { toggleTodo } from '../actions/actions';
 import TodoList from '../components/TodoList';
-import { getVisibleTodos } from "../selectors";
+import { makeGetVisibleTodos } from "../selectors";
 
 const getVisibleTodos = (todos, filter) => {
 	switch (filter) {
@@ -19,11 +19,14 @@ const getVisibleTodos = (todos, filter) => {
 	}
 };
 
-const mapStateToProps = (state, props) => {
-	return {
-		// WARNING: THE FOLLOWING SELECTOR DOES NOT CORRECTLY MEMOIZE
-		todos: getVisibleTodos(state, props)
-	}
+const makeMapStateToProps = (state, props) => {
+	const getVisibleTodos = makeGetVisibleTodos();
+	const mapStateToProps = (state, props) => {
+		return {
+			todos: getVisibleTodos(state, props)
+		};
+	};
+	return mapStateToProps;
 };
 
 	const mapDispatchToProps = dispatch => {
@@ -34,6 +37,6 @@ const mapStateToProps = (state, props) => {
 	}
 };
 
-const VisibleTodoList = connect(mapStateToProps, mapDispatchToProps)(TodoList);
+const VisibleTodoList = connect(makeMapStateToProps, mapDispatchToProps)(TodoList);
 
 export default VisibleTodoList;
